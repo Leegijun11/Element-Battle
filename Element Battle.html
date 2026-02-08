@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+        const element = ["불", "풀", "물", "전기"];
+        let attack1 = [];
+        let attack2 = [];
+        let attacking;
+        let attacked = [];
+        let enemy_hp = 80;
+        let my_element;
+        alert("Element Battle Start"); 
+        while(true){
+            my_element = prompt("내 속성을 입력하세요");
+            if(my_element == "불" || my_element == "물" || my_element == "풀" || my_element == "전기"){
+                break;
+            }
+            else {
+                alert("속성을 잘못입력하셨습니다. 다시 입력해주세요.");
+                continue;
+            }
+        }
+        let enemy_element = element[Math.floor(Math.random()*element.length)];
+
+        if(my_element == "불"){
+            attack1 = ["File ball(30)", "Water pump(15)", "electric shock(10)"]
+        }
+        else if(my_element == "풀"){
+            attack1 = ["File ball(10)", "Leaf Strike(30)", "electric shock(15)"]
+        }
+        else if(my_element == "전기"){
+           attack1 = ["Water pump(15)", "Leaf Strike(10)", "electric shock(30)"]
+        }
+        else if(my_element == "물"){
+          attack1 = ["Water pump(30)", "Leaf Strike(15)", "File ball(10)"]
+        }
+
+        if(enemy_element == "불"){
+            attack2 = ["File ball(30)", "Water pump(15)", "electric shock(10)"]
+        }
+        else if(enemy_element == "풀"){
+            attack2 = ["File ball(10)", "Leaf Strike(30)", "electric shock(15)"]
+        }
+        else if(enemy_element == "전기"){
+           attack2 = ["Water pump(15)", "Leaf Strike(10)", "electric shock(30)"]
+        }
+        else if(enemy_element == "물"){
+          attack2 = ["Water pump(30)", "Leaf Strike(15)", "File ball(10)"]
+        }        
+
+        for(let i =1 ; i<=3; i++){
+            attacking = prompt(i+"번째 공격입니다. 공격할 방법을 골라주세요(공격 이름만)", [attack1]);
+
+            if(my_element =="불" && attacking == 'File ball'){
+                if(enemy_element == '풀'){
+                    alert("효과가 굉장했다! 60의 데미지를 입혔다.");
+                    enemy_hp -= 60;
+                }
+                else if(enemy_element == "전기"){
+                    alert("효과가 미미했다..15의 데미지를 입혔다.");
+                    enemy_hp -= 15;
+                }
+                else {
+                    alert("30의 데미지를 입혔다.");
+                    enemy_hp -= 30;
+                }
+            }
+            else if(my_element =="풀" && attacking == 'File ball'){
+                if(enemy_element == '풀'){
+                    alert("효과가 굉장했다! 20의 데미지를 입혔다.");
+                    enemy_hp -= 20;
+                }
+                else if(enemy_element == "전기"){
+                    alert("효과가 미미했다..5의 데미지를 입혔다.");
+                    enemy_hp -= 5;
+                }
+                else {
+                    alert("10의 데미지를 입혔다.");
+                    enemy_hp -= 10;
+                }
+            }
+            else if(my_element =="물" && attacking == 'File ball'){
+                if(enemy_element == '풀'){
+                    alert("효과가 굉장했다! 20의 데미지를 입혔다.");
+                    enemy_hp -= 20;
+                }
+                else if(enemy_element == "전기"){
+                    alert("효과가 미미했다..5의 데미지를 입혔다.");
+                    enemy_hp -= 5;
+                }
+                else {
+                    alert("10의 데미지를 입혔다.");
+                    enemy_hp -= 10;
+                }
+            }
+            else if (my_element =="풀" && attacking == "Leaf Strike"){
+                if(enemy_element == '물'){
+                    alert("효과가 굉장했다! 60의 데미지를 입혔다.");
+                    enemy_hp -= 60;
+                }
+                else if(enemy_element == "불"){
+                    alert("효과가 미미했다..15의 데미지를 입혔다.");
+                    enemy_hp -= 15;
+                }
+                else {
+                    alert("30의 데미지를 입혔다.");
+                    enemy_hp -= 30;
+                }
+            }
+            else if (my_element =="전기" && attacking == "Leaf Strike"){
+                if(enemy_element == '물'){
+                    alert("효과가 굉장했다! 20의 데미지를 입혔다.");
+                    enemy_hp -= 60;
+                }
+                else if(enemy_element == "불"){
+                    alert("효과가 미미했다..15의 데미지를 입혔다.");
+                    enemy_hp -= 5;
+                }
+                else {
+                    alert("30의 데미지를 입혔다.");
+                    enemy_hp -= 10;
+                }
+            }
+            else if (my_element =="물" && attacking == "Leaf Strike"){
+                if(enemy_element == '물'){
+                    alert("효과가 굉장했다! 30의 데미지를 입혔다.");
+                    enemy_hp -= 30;
+                }
+                else if(enemy_element == "불"){
+                    alert("효과가 미미했다..7.5의 데미지를 입혔다.");
+                    enemy_hp -= 7.5;
+                }
+                else {
+                    alert("15의 데미지를 입혔다.");
+                    enemy_hp -= 15;
+                }
+            }
+            else if (my_element =="물" && attacking == "Water pump"){
+                if(enemy_element == '전기'){
+                    alert("효과가 굉장했다! 60의 데미지를 입혔다.");
+                    enemy_hp -= 60;
+                }
+                else if(enemy_element == "풀"){
+                    alert("효과가 미미했다.. 15의 데미지를 입혔다.");
+                    enemy_hp -= 15;
+                }
+                else {
+                    alert("30의 데미지를 입혔다.");
+                    enemy_hp -= 30;
+                }
+            }
+            else if (my_element =="불" && attacking == "Water pump"){
+                if(enemy_element == '전기'){
+                    alert("효과가 굉장했다! 30의 데미지를 입혔다.");
+                    enemy_hp -= 30;
+                }
+                else if(enemy_element == "풀"){
+                    alert("효과가 미미했다.. 7.5의 데미지를 입혔다.");
+                    enemy_hp -= 7.5;
+                }
+                else {
+                    alert("15의 데미지를 입혔다.");
+                    enemy_hp -= 15;
+                }
+            }
+            else if (my_element =="전기" && attacking == "Water pump"){
+                if(enemy_element == '전기'){
+                    alert("효과가 굉장했다! 30의 데미지를 입혔다.");
+                    enemy_hp -= 30;
+                }
+                else if(enemy_element == "풀"){
+                    alert("효과가 미미했다.. 7.5의 데미지를 입혔다.");
+                    enemy_hp -= 7.5;
+                }
+                else {
+                    alert("15의 데미지를 입혔다.");
+                    enemy_hp -= 15;
+                }
+            }
+            else if (my_element =="전기" && attacking == "electric shock"){
+                if(enemy_element == '불'){
+                    alert("효과가 굉장했다! 60의 데미지를 입혔다.");
+                    enemy_hp -= 60;
+                }
+                else if(enemy_element == "물"){
+                    alert("효과가 미미했다.. 15의 데미지를 입혔다.");
+                    enemy_hp -= 15;
+                }
+                else {
+                    alert("30의 데미지를 입혔다.");
+                    enemy_hp -= 30;
+                }
+            }
+           else if (my_element =="불" && attacking == "electric shock"){
+                if(enemy_element == '불'){
+                    alert("효과가 굉장했다! 20의 데미지를 입혔다.");
+                    enemy_hp -= 20;
+                }
+                else if(enemy_element == "물"){
+                    alert("효과가 미미했다.. 5의 데미지를 입혔다.");
+                    enemy_hp -= 5;
+                }
+                else {
+                    alert("10의 데미지를 입혔다.");
+                    enemy_hp -= 10;
+                }
+            }
+           else if (my_element =="풀" && attacking == "electric shock"){
+                if(enemy_element == '불'){
+                    alert("효과가 굉장했다! 30의 데미지를 입혔다.");
+                    enemy_hp -= 30;
+                }
+                else if(enemy_element == "물"){
+                    alert("효과가 미미했다.. 7.5의 데미지를 입혔다.");
+                    enemy_hp -= 7.5;
+                }
+                else {
+                    alert("15의 데미지를 입혔다.");
+                    enemy_hp -= 15;
+                }
+            }
+            alert(`현재 ${i}라운드이며, 3라운드 안에 적을 쓰러뜨려야 합니다.`);
+            attacked[i-1] = attacking;
+            if(enemy_hp <=0){
+                alert("적을 쓰러뜨려 승리하였습니다!");
+            }
+            alert("상대의 현재 남은 hp는 " + enemy_hp +"입니다.");
+        }
+
+        if(enemy_hp>0){
+            alert(`아쉽게도 적을 쓰러뜨리지 못했습니다.. 남은 적 hp는 ${enemy_hp}입니다`);
+        }
+
+        document.write("게임 결과<br>");
+        document.write("내 속성 : " + my_element + "<br>" + "상대 속성 : " + enemy_element + "<br>");
+        for(let i = 0 ; i<=2; i++){
+            document.write("선택한 공격 :" + attacked[i] + "<br>");
+        }
+
+    </script>
+</body>
+</html>
