@@ -9,4 +9,4 @@
 불 / 물 / 풀 / 전기 속성으로 싸우는 게임입니다.
 
 ## 실행 방법
-Element-Battle.html 실행하면 게임이 시작됩니다.
+Element Battle.html 실행하면 게임이 시작됩니다.
