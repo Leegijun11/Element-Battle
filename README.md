@@ -1,4 +1,4 @@
-# Element Battle
+## Element Battle
 속성 전투 게임 프로젝트입니다.
 
 ## 사용 기술
